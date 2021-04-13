@@ -1,0 +1,263 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+       
+        <!-- ===========Home load=============================================-->
+        <action name="" class="controller.HomeActionSupport" method="displayAllContentAtHome">
+            <result name="success">home.jsp</result>
+        </action> 
+        
+        <action name="redirectToCar">
+            <result name="success">luxSa2.jsp</result>
+        </action>
+        
+        <action name="home" class="controller.HomeActionSupport" method="displayAllContentAtHome">
+            <result name="success">home.jsp</result>
+        </action> 
+        
+        <!-- ===========Link page load=============================================-->
+        
+        
+        <action name="aboutUs" class="controller.LoadActionSupport" method="execute">
+            <result name="success">aboutUs.jsp</result>
+        </action>
+        
+        <action name="contactUs">
+            <result name="success">contactUs.jsp</result>
+        </action>
+        
+        <action name="admin">
+            <result name="success">adminHome.jsp</result>
+        </action>
+
+        
+        <!-- ===========Login Logout============================================= -->
+        <action name="loginAction" class="controller.LoginActionSupport" method="execute">
+            <result name="admin" type="redirectAction">admin</result>
+            <result name="viewer" type="redirectAction">home</result>
+            
+            <result name="input">/adminLogin.jsp</result>
+        </action>
+        
+        <action name="ForgotPassword" class="controller.ForgotPasswordActionSupport" method="execute">
+            <result name="success">sendMailSuccess.jsp</result>
+            <result name="fail">/adminLogin.jsp</result>
+
+        </action>
+        
+        <action name="logoutAction" class="controller.LoginActionSupport" method="logout">
+            <result name="LOGOUT" type="redirectAction">home</result>
+            <result name="">home.jsp</result>
+        </action> 
+        
+        <!-- ===========Register action============== -->
+        <action name="registerAction" class="controller.RegisterActionSupport" method="execute">
+            <result name="success">/register.jsp</result>
+            <result name="fail">/register.jsp</result>
+        </action>
+     
+        <!-- ===========CarDetail action============== -->
+        
+        <action name="carDetail" class="controller.HomeActionSupport" method="displayCarById">
+            <result name="success">luxSa2.jsp</result>
+        </action>   
+        <action name="AdminCarDetail" class="controller.HomeActionSupport" method="displayCarById">
+            <result name="success">adminModifyCar.jsp</result>
+        </action> 
+        <action name="carDetailRedirect" class="controller.CarDetailActionSupport" method="execute">
+            <result name="success">viewDetails.jsp</result>
+        </action>   
+        <action name="listCart" class="controller.CarDetailActionSupport" method="displayListCar">
+            <result name="success">carList.jsp</result>
+        </action> 
+        
+        <!-- ===========Blog action============== -->
+        <action name="blog" class="controller.BlogActionSupport" method="execute">
+            <result name="success">news.jsp</result>
+        </action> 
+        
+        <action name="getByCate" class="controller.BlogActionSupport" method="getBlogByCate">
+            <result name="success">news.jsp</result>
+        </action>
+        
+        
+        <action name="SearchTitle" class="controller.BlogActionSupport" method="SearchByTitle">
+            <result name="success">news.jsp</result>
+            <result name="fail">fail.jsp</result>
+        </action>   
+        
+        <action name="blogDetail" class="controller.BlogActionSupport" method="displayById">
+            <result name="success">news0102.jsp</result>   
+        </action>
+        
+        <!-- ===========FeedBack action============== --> 
+        <action name="testDrive" class="controller.FeedBackActionSupport" method="displayComment">
+            <result name="success">testdrive.jsp</result>   
+        </action>
+ 
+        <action name="addFeedBack" class="controller.FeedBackActionSupport" method="execute">
+            <result name="success" type="redirectAction">testDrive</result>   
+            <result name="fail" type="redirectAction">testDrive</result> 
+        </action>
+
+        <!-- ===========Admin action============== --> 
+        <action name="ShowAccount" class="controller.ManageAccountActionSupport" method="execute">
+            <result name="success">adminTables.jsp</result>   
+        </action>
+             
+        <action name="DeleteAcc" class="controller.ManageAccountActionSupport" method="DeleteAccount">
+            <result name="success" type="redirectAction">ShowAccount</result>   
+            <result name="fail" type="redirectAction">ShowAccount</result>   
+        </action>
+       
+        <action name="DisplayAccountByID" class="controller.ManageAccountActionSupport" method="displayById">
+            <result name="success" >adminAccountModify.jsp</result>   
+        </action>
+        
+        <action name="UpdateAccount" class="controller.ManageAccountActionSupport" method="UpdateAccount">
+            <result name="success" type="redirectAction">ShowAccount</result>   
+        </action>
+        
+        <!-- ///////////////////////////////////////////////////////// -->
+        <action name="ShowNews" class="controller.BlogActionSupport" method="execute">
+            <result name="success">adminShowBlog.jsp</result>
+        </action> 
+        
+        <action name="DeleteBlog" class="controller.BlogActionSupport" method="DeleteNews">
+            <result name="success" type="redirectAction">ShowNews</result>   
+        </action>
+        
+        <action name="adminBlogDetail" class="controller.BlogActionSupport" method="displayById">
+            <result name="success">adminModifyBlog.jsp</result>   
+        </action>
+        
+        <action name="addBlog" class="controller.BlogActionSupport" method="addBlog">
+            <result name="success">adminPost.jsp</result>   
+        </action>
+        
+        <action name="UpdateBlog" class="controller.BlogActionSupport" method="UpdateNews">
+            <result name="success" type="redirectAction">ShowNews</result>   
+        </action>
+        
+        <!-- ///////////////////////////////////////////////////////// -->
+          
+        <action name="ShowCarAdmin" class="controller.CarDetailActionSupport" method="displayListCar">
+            <result name="success">adminShowCar.jsp</result>
+        </action> 
+        
+        <action name="UpdateCar" class="controller.ManagerCarAction" method="execute">
+            <result name="success" type="redirectAction">ShowCarAdmin</result>
+        </action> 
+        
+         <action name="AddCar" class="controller.ManagerCarAction" method="addCar1">
+            <result name="success">AddCarSuccess.jsp</result>
+            <result name="fail" type="redirect">ShowCarAdmin</result>
+        </action> 
+        
+         <action name="AddCarDetail" class="controller.ManagerCarAction" method="addCar2">
+            <result name="success" type="redirectAction">ShowCarAdmin</result>
+        </action> 
+        
+        <action name="DeleteCar" class="controller.ManagerCarAction" method="DeleteCarByID">
+            <result name="success" type="redirectAction">ShowCarAdmin</result>
+            <result name="fail" type="redirectAction">ShowCarAdmin</result>
+        </action> 
+        
+        <action name="ShowColor" class="controller.ManagerCarAction" method="ShowColor">
+            <result name="success">adminShowColorCar.jsp</result>
+        </action> 
+        
+        <action name="showPageView" class="controller.PageViewerActionSupport" method="execute">
+            <result name="success">adminCountView.jsp</result>
+        </action> 
+        
+        <action name="addColorCar" class="controller.ManagerCarAction" method="AddColor">
+           <result name="success" type="redirectAction">
+                <param name="actionName">ShowColor</param>
+                <param name="id_car">${id_car}</param>
+            </result>
+        </action> 
+        
+         <action name="DeleteColor" class="controller.ManagerCarAction" method="DeleteColor">
+           <result name="success" type="redirectAction">
+                <param name="actionName">ShowColor</param>
+                <param name="id_car">${id_car}</param>
+            </result>
+        </action> 
+         
+        
+        <!-- //////////////////////////////////////////////////////// -->
+        
+        <action name="showRegisterTest" class="controller.ManageRegisterDriveActionSupport" method="execute">
+            <result name="success" >adminViewRegisterTest.jsp</result>
+        </action> 
+        <action name="showReturnedCar" class="controller.ManageRegisterDriveActionSupport" method="returnedCar">
+            <result name="success" >viewReturnedCar.jsp</result>
+        </action> 
+        
+        <action name="UpdateRegister" class="controller.ManageRegisterDriveActionSupport" method="UpdateRegisterTest">
+            <result name="success" type="redirectAction">showRegisterTest</result>   
+        </action>
+        
+        <action name="DeleteCarBorrow" class="controller.ManageRegisterDriveActionSupport" method="DeleteCarBorrow">
+            <result name="success" type="redirectAction">showRegisterTest</result>   
+        </action>
+        
+        <!-- ==================Register test drive=============== -->
+        
+        <action name="addRegisterForm" class="controller.RegisterCarActionSupport" method="execute">
+            <result name="success"  type="redirectAction"> >testDrive</result>
+        </action> 
+        
+        <!-- ===================Profile ================== -->
+        <action name="getInformationCus" class="controller.ProfileActionSupport" method="getInformation">
+            <result name="success">profileCustomer.jsp</result>
+        </action> 
+        
+        <action name="updateAccountClient" class="controller.ProfileActionSupport" method="execute">
+            <result name="success" type="redirectAction">
+                <param name="actionName">getInformationCus</param>
+                <param name="id_user">${id}</param>
+            </result>
+            <result name="fail" type="redirectAction">
+                <param name="actionName">getInformationCus</param>
+                <param name="id_user">${id}</param>
+            </result>
+            
+        </action> 
+        
+        <action name="AddFeedBackCarBorrow" class="controller.ProfileActionSupport" method="AddFeedback">
+            <result name="success" >successful.jsp</result>
+        </action> 
+        
+        <action name="RequireCancel" class="controller.ProfileActionSupport" method="RequireCancel">
+            <result name="success" >successful.jsp</result>
+        </action> 
+        
+        <action name="updateAvatar" class="controller.ProfileActionSupport" method="AddAvatar">
+            <result name="success" type="redirectAction">
+                <param name="actionName">getInformationCus</param>
+                <param name="id_user">${id_cus}</param>
+            </result>
+        </action> 
+        
+        
+        <!-- ==================Contact us=============== -->
+        
+        <action name="SendContact" class="controller.ContactUsActionSupport" method="execute">
+            <result name="success">successful.jsp</result>
+           
+        </action> 
+        
+        <action name="getInfo" class="controller.ContactUsActionSupport" method="getInformation">
+            <result name="success">adminShowContact.jsp</result>
+        </action> 
+        
+        
+    </package>
+</struts>

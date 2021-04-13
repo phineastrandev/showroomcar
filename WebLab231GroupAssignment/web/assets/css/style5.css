@@ -1,0 +1,416 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 7, 2021, 7:16:41 PM
+    Author     : PC
+*/
+style 5:
+
+
+.vf-specs {
+  position: relative;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  background-color: #000000;
+}
+
+@media only screen and (max-width: 1279px) {
+  .vf-specs {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .vf-specs {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.vf-specs::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.vf-specs img {
+  display: block;
+  max-width: 100%;
+}
+
+.vf-specs .wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 118rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .wrapper {
+    flex-wrap: wrap;
+    display: flex;
+  }
+}
+
+.vf-specs .image {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .image {
+    flex-basis: 35%;
+    display: block;
+  }
+}
+
+.vf-specs .specs {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs {
+    flex-basis: 65%;
+    padding-left: 5%;
+  }
+}
+
+.vf-specs .specs h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs h2 {
+    text-align: left;
+  }
+}
+
+.vf-specs .specs h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 0.1rem solid #707070;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5em;
+}
+
+.vf-specs .specs .content {
+  display: none;
+}
+
+.vf-specs .specs .content:first-child {
+  display: block;
+}
+
+.vf-specs .specs .content .noted {
+  position: relative;
+  padding-left: 7rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.vf-specs .specs .content .noted strong {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+.vf-specs .specs .content .noted ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 4rem;
+}
+
+.vf-specs .specs .content .noted ul li:first-child .icon::before {
+  background-color: #CBCBCB;
+}
+
+.vf-specs .specs .content .noted ul li .icon {
+  width: 3rem;
+  height: 1.8rem;
+  border: 0.1rem solid #CBCBCB;
+  position: absolute;
+  left: 0;
+}
+
+.vf-specs .specs .content .noted ul li .icon::before {
+  content: '';
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 0.1rem solid #CBCBCB;
+}
+
+.vf-specs .specs .content-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.vf-specs .specs .content-item span {
+  display: block;
+}
+
+.vf-specs .specs .content-title {
+  flex-basis: 50%;
+  max-width: 50%;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-title {
+    flex-basis: 30%;
+    max-width: 30%;
+  }
+}
+
+.vf-specs .specs .content-group {
+  flex-basis: 50%;
+  max-width: 50%;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-group {
+    flex-basis: 70%;
+    max-width: 70%;
+    padding-left: 0;
+  }
+}
+
+.vf-specs .specs .content-group.is-border {
+  border-left: 0.1rem solid #707070;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-group.is-border {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-group.is-border .content-sub {
+    border-left: 0.1rem solid #707070;
+    border-right: 0.1rem solid #707070;
+  }
+}
+
+.vf-specs .specs .content-desc {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-desc {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+  }
+}
+
+.vf-specs .specs .content-desc:last-child {
+  margin-bottom: 0;
+}
+
+.vf-specs .specs .content-sub {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-sub {
+    flex-basis: 50%;
+    padding: 0 1rem 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs .content-text {
+    flex-basis: 50%;
+    padding: 0 1rem;
+  }
+}
+
+.vf-specs .specs .content-hide {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease-out;
+}
+
+.vf-specs .specs .content-hide.is-active {
+  max-height: 5000rem;
+}
+
+.vf-specs .specs .option-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.vf-specs .specs .option-title {
+  font-weight: 700;
+  max-width: 80%;
+  flex-basis: 80%;
+  padding: 0 5rem 0 2.5rem;
+}
+
+.vf-specs .specs .option-status {
+  max-width: 20%;
+  flex-basis: 20%;
+  padding: 0 1.5rem;
+}
+
+.vf-specs .specs .option-status .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 0.1rem solid #fff;
+}
+
+.vf-specs .specs .option-status .icon.is-active {
+  background-color: #fff;
+}
+
+.vf-specs .specs-image {
+  display: block;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs-image {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs-modal-tab, .vf-specs .specs-tab {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+  }
+}
+
+.vf-specs .specs-modal-tab-item, .vf-specs .specs-tab-item {
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: 0.1rem solid #F1F2F2;
+  color: #CBCBCB;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease-out;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs-modal-tab-item, .vf-specs .specs-tab-item {
+    margin-left: 2rem;
+    width: auto;
+  }
+}
+
+.vf-specs .specs-modal-tab-item:hover, .vf-specs .specs-tab-item:hover {
+  background-color: #C4161C;
+  border-color: #C4161C;
+}
+
+.vf-specs .specs-modal-tab-item.is-active, .vf-specs .specs-tab-item.is-active {
+  pointer-events: none;
+  cursor: default;
+  background-color: #C4161C;
+  border-color: #C4161C;
+}
+
+.vf-specs .specs-modal-tab-item:first-child, .vf-specs .specs-tab-item:first-child {
+  margin-left: 0;
+}
+
+.vf-specs .specs-foot {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs-foot {
+    justify-content: flex-start;
+  }
+}
+
+.vf-specs .specs-foot .btn-specs {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.vf-specs .specs-foot .btn-specs.is-show .icon::after {
+  transform: rotate(0deg);
+}
+
+.vf-specs .specs-foot .btn-specs .icon {
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem solid #fff;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  margin-right: 1rem;
+}
+
+.vf-specs .specs-foot .btn-specs .icon::before, .vf-specs .specs-foot .btn-specs .icon::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: #fff;
+  position: absolute;
+}
+
+.vf-specs .specs-foot .btn-specs .icon::after {
+  left: 0.6rem;
+  top: 1.2rem;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+
+.vf-specs .specs-foot .btn-more {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs-foot .btn-more {
+    display: flex;
+  }
+}
+
+.vf-specs .specs-foot .btn-more-mb {
+  display: flex;
+}
+
+@media screen and (min-width: 992px) {
+  .vf-specs .specs-foot .btn-more-mb {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
